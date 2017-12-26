@@ -20,7 +20,7 @@ import sniffLocale from './middleware/sniffLocale';
 import isProd from 'src/common/utils/isProd';
 
 const app = new Koa();
-
+const PORT = 3001;
 app
   // add logger to context
   .use(initLogger)
@@ -41,4 +41,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.listen(3001);
+app.listen(PORT);
+console.log(`
+Server has started @ ${PORT}
+`)
